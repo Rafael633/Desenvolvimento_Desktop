@@ -1,0 +1,30 @@
+using System;
+					
+public class Operacoes
+{
+	public static void Main()
+	{	
+		int A;
+		int B;
+		int adicao;
+        int subtracao;
+        int multiplicacao;
+        int divisao;
+		
+		Console.WriteLine("Digite o 1° valor: ");
+		A = int.Parse(Console.ReadLine());
+		
+		Console.WriteLine("Digite o 2° valor: ");
+        B = int.Parse(Console.ReadLine());
+        
+		adicao = ((A + B));
+        subtracao = (A - B);
+        multiplicacao = (A * B);
+        divisao = (A / B);
+		
+        Console.WriteLine("\n" + A + " + " + B + " = " + adicao);
+		Console.WriteLine(+A + " - " + B + " = " + subtracao);
+		Console.WriteLine(+A + " * " + B + " = " + multiplicacao);
+		Console.WriteLine(+A + " / " + B + " = " + divisao);
+	}
+}

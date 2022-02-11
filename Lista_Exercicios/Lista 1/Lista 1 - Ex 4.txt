@@ -1,0 +1,15 @@
+using System;
+					
+public class ValorDobro
+{
+	public static void Main()
+	{	
+		Console.WriteLine("Valor maior que o Dobro");
+		int valorUm = 10;
+        int valorDois = 5;
+        
+        String message = valorDois >= valorUm * 2 ? "É maior ou igual ao valor 1" : "Não é maior igual ao valor 1";
+			
+		Console.WriteLine(message);
+	}
+}

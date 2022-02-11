@@ -1,0 +1,15 @@
+using System;
+					
+public class Area
+{
+	public static void Main()
+	{	
+		Console.WriteLine("Cálculo da Área");
+		double ladoUm = 2.70;
+        float ladoDois = 8;
+        
+        double area = ladoUm * ladoDois;
+			
+		Console.WriteLine(area);
+	}
+}
