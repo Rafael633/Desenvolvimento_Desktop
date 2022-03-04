@@ -9,16 +9,14 @@ namespace Models
     public class Agendamento
     {
         public int Id { set; get; }
-        public int PacienteId { set; get; }
         [Required]
+        public int PacienteId { set; get; }
         public Paciente Paciente { get; }
         [Required]
         public int DentistaId { set; get; }
-        [Required]
         public Dentista Dentista { get; }
         [Required]
         public int SalaId { set; get; }
-        [Required]
         public Sala Sala { get; }
         [Required]
         public DateTime Data { set; get; }
