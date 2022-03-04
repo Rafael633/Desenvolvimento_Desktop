@@ -8,12 +8,12 @@ namespace Views
     {
         public static void InserirAtendimento()
         {
-            int IdAgendamento;
-            int IdProcedimento;
+            int AgendamentoId;
+            int ProcedimentoId;
             Console.WriteLine("Digite o ID do Agendamento: ");
             try
             {
-                IdAgendamento = Convert.ToInt32(Console.ReadLine());
+                AgendamentoId = Convert.ToInt32(Console.ReadLine());
             }
             catch
             {
@@ -22,7 +22,7 @@ namespace Views
             Console.WriteLine("Digite o ID do Procedimento: ");
             try
             {
-                IdProcedimento = Convert.ToInt32(Console.ReadLine());
+                ProcedimentoId = Convert.ToInt32(Console.ReadLine());
             }
             catch
             {
@@ -30,8 +30,8 @@ namespace Views
             }
 
             AtendimentoController.InserirAtendimento(
-                IdAgendamento,
-                IdProcedimento
+                AgendamentoId,
+                ProcedimentoId
             );
         }
 
@@ -45,7 +45,7 @@ namespace Views
             }
             catch
             {
-                throw new Exception("ID inválido.");
+                throw new Exception("Id inválido.");
             }
 
             AtendimentoController.ExcluirAtendimento(

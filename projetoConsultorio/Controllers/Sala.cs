@@ -54,10 +54,10 @@ namespace Controllers
         )
         {
             List<Sala> salasModels = Models.Sala.GetSalas();
-            IEnumerable<Sala> salas = from Sala in salasModels
+            IEnumerable<Sala> Salas = from Sala in salasModels
                             where Sala.Id == Id
                             select Sala;
-            Sala sala = salas.First();
+            Sala sala = Salas.First();
             
             if (sala == null)
             {

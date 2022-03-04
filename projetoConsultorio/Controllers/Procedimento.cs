@@ -56,7 +56,7 @@ namespace Controllers
                     where Procedimento.Id == Id
                     select Procedimento
             ).First();
-            
+           
             if (procedimento == null)
             {
                 throw new Exception("Procedimento não encontrado");

@@ -47,7 +47,7 @@ namespace Controllers
 
             if (DataNascimento == null || DataNascimento > DateTime.Now)
             {
-                throw new Exception("Data de Nascimento inválida");
+                throw new Exception("Data de Nacimento inválida");
             }
 
             return new Paciente(Nome, Cpf, Fone, Email, Senha, DataNascimento);
@@ -92,7 +92,7 @@ namespace Controllers
 
             if (DataNascimento > DateTime.Now)
             {
-                throw new Exception("Data de Nascimento inválida");
+                throw new Exception("Data de Nacimento inválida");
             }
 
             if (DataNascimento != null)
