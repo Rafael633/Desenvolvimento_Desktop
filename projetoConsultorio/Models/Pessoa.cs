@@ -44,10 +44,6 @@ namespace Models
             this.Fone = Fone;
             this.Email = Email;
             this.Senha = Senha;
-
-            Context db = new Context();
-            db.Pessoas.Add(this);
-            db.SaveChanges();
         }
 
         public override bool Equals(object obj)
