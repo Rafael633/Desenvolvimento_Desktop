@@ -12,17 +12,17 @@ namespace Models
         [Required]
         public string Descricao { set; get; }
         [Required]
-        public string Tarefa { set; get; }
+        public string Tarefas { set; get; }
 
         public Especialidade() { }
         
         public Especialidade(
             string Descricao,
-            string Tarefa
+            string Tarefas
         ) 
         {
             this.Descricao = Descricao;
-            this.Tarefa = Tarefa;
+            this.Tarefas = Tarefas;
             
             Context db = new Context();
             db.Especialidades.Add(this);
@@ -33,7 +33,7 @@ namespace Models
         {
            return $"ID: {this.Id}" 
                 + $"\nDescrição: {this.Descricao}"
-                + $"\nPreço: R$ {this.Tarefa}";
+                + $"\nPreço: R$ {this.Tarefas}";
         }
 
         public override bool Equals(object obj)
