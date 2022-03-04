@@ -7,7 +7,6 @@ namespace Repository
     {
         public DbSet<Sala> Salas { get; set; }
         public DbSet<Procedimento> Procedimentos { get; set; }
-        public DbSet<Pessoa> Pessoas { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Dentista> Dentistas { get; set; }
         public DbSet<Especialidade> Especialidades { get; set; }
