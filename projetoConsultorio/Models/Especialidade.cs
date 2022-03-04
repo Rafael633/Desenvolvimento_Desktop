@@ -1,51 +1,65 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.ComponentModel.DataAnnotations;
+using Repository;
+using System;
 
 namespace Models
 {
     public class Especialidade
     {
-        public static int ID = 0;
-        private static List<Especialidade> Especialidades = new List<Especialidade>();
         public int Id { set; get; }
+        [Required]
         public string Descricao { set; get; }
-        public string Tarefas { set; get; }
+        [Required]
+        public string Tarefa { set; get; }
 
+        public Especialidade() { }
+        
         public Especialidade(
             string Descricao,
-            string Tarefas
-        ) : this(++ID, Descricao, Tarefas)
-        {
-        }
-
-        private Especialidade(
-            int Id,
-            string Descricao,
-            string Tarefas
+            string Tarefa
         ) 
         {
-            this.Id = Id;
             this.Descricao = Descricao;
-            this.Tarefas = Tarefas;
-
-            Especialidades.Add(this);
+            this.Tarefa = Tarefa;
+            
+            Context db = new Context();
+            db.Especialidades.Add(this);
+            db.SaveChanges();
         }
 
         public override string ToString()
         {
-            return $"ID: {this.Id}"
+           return $"ID: {this.Id}" 
                 + $"\nDescrição: {this.Descricao}"
-                + $"\nTarefas: {this.Tarefas}";
+                + $"\nPreço: R$ {this.Tarefa}";
         }
 
-
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!Especialidade.ReferenceEquals(obj, this))
+            {
+                return false;
+            }
+            Especialidade it = (Especialidade) obj;
+            return it.Id == this.Id;
+        }
+        
         public static List<Especialidade> GetEspecialidades()
         {
-            return Especialidades;
+            Context db = new Context();
+            return (from Especialidade in db.Especialidades select Especialidade).ToList();
         }
 
         public static void RemoverEspecialidade(Especialidade especialidade)
         {
-            Especialidades.Remove(especialidade);
+            Context db = new Context();
+            db.Especialidades.Remove(especialidade);
         }
     }
 }
